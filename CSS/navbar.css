@@ -1,0 +1,122 @@
+/* NAVBAR BACKGROUND */
+.nav-bar{          
+    background:#77879a;
+   
+}
+
+/* Title */
+.nav-bar h4{
+    color:white;
+    font-weight:600;
+    margin:0;
+}
+
+/* Make button background visible */
+.navbar-toggler {
+    background-color: #000;     /* button background */
+    border: 2px solid #fff;     /* border */
+}
+
+.nav-bar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffc857' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  
+}
+
+.navbar-light .navbar-toggler{
+    border: 2px solid #ffc857;
+}
+
+
+
+.nav-bar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 215, 130, 0.45);
+}
+
+
+/* Links */
+.nav-link{
+    color:#e5e5e5 !important;
+    font-size:18px;
+    margin:0 10px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#ffc857 !important;
+}
+
+/* Active link */
+.nav-link.active{
+    color:#ffc857 !important;
+    font-weight:600;
+}
+
+/* Book button */
+.book-btn{
+    background:#d9d9d9;
+    padding:8px 18px;
+    border-radius:8px;
+    margin-left:15px;
+    text-decoration:none;
+    color:black;
+    font-weight:500;
+}
+
+/* Toggle switch */
+.dark_attach,
+.dark-toggle{
+    width:55px;
+    height:28px;
+    background:#d9d9d9;
+    border-radius:20px;
+    border:none;
+    margin-left:15px;
+    position:relative;
+    cursor:pointer;
+}
+
+/* circle */
+.dark-toggle::before{
+    content:"";
+    width:22px;
+    height:22px;
+    background:white;
+    position:absolute;
+    top:3px;
+    left:4px;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+/* Dark mode */
+.dark-mode{
+    background:#2c3440;      /* main background (soft dark blue gray) */
+    color:white;
+}
+
+.dark-mode .nav-bar{
+    background:#3b4656;        /* navbar color */
+}
+
+.dark-mode .dark-toggle::before{
+    left:28px;
+    background:#000;
+}
+
+
+
+/* Mobile spacing */
+@media (max-width:991px){
+
+.nav-links ul{
+    padding-top:20px;
+}
+
+.nav-item{
+    margin:10px 0;
+}
+
+.book-btn{
+    display:inline-block;
+}
+}
