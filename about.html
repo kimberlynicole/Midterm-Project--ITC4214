@@ -1,22 +1,226 @@
 <!DOCTYPE html>
-<head>
-    <title>
-        Majectic Villa
-    </title>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Majestic Villa</title>
+        <link href="CSS/navbar.css" rel="stylesheet">
+        <link href="CSS/about.css" rel="stylesheet">
+        <link href="CSS/style.css" rel="stylesheet">
 
-<body>
-    <div class="nav-bar">
-        <!--Needs to add Dark mode button-->
-        <img src="images/logo.png" alt="Logo" weight="30px" height="50px"></img>
-        <h3>Majestic Villa</h3>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html"> Home</a></li>
-                <li><a href="trip-planner.html"> Trip Planner</a></li>
-                <li><a href="about.html"> About Us</a></li>
-                <li><a href="contact.html"> Contact</a></li>
-                <li><a href="book.html"> Book Now</a></li>
-            </ul>
-        </nav>   
-    </div>
+        
+    
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="javascript/darkmode.js" defer></script>
+        <script src="javascript/loadNavbar.js" defer></script>
+    </head>
+
+    <body>
+        <div id="navbar"></div>
+
+        <div>
+            <div class="banner img-fluid">
+                <img src="images/about-image.png" alt="Aerial shot of the Majestic Villa">
+                <div class="overlay"></div> <!-- semi-transparent layer -->
+                <div class="banner-text">
+                    <h1 class="mb-4">Your Chapter of Majesty Begins</h1> 
+                    <p class=" text-center">An exclusive private villa-reserved for only one guest group at a time</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="about-us container">
+            <h1 class="text-center my-5">About Us</h1>
+            <p>At Majestic Villa, we believe that true luxury is found in privacy, comfort, and unforgettable experiences.</p>
+            <p>
+                Majestic Villa was created as a private sanctuary for those seeking exclusivity and tranquility. When you book 
+                with us, the entire villa is exclusively yours — offering complete freedom, personalized service, and a space 
+                where you can truly relax and reconnect.
+            </p>
+            <p>Our Villa provides the rare opportunity to enjoy an entire estate 
+                and its own private beach — exclusively yours for the duration of your stay. Enjoy peaceful morning walks 
+                along the shore, swim in crystal-clear waters, and relax without crowds in the breathtaking sunsets over the sea.Our 
+                villa combines elegant design with modern comfort. Spacious bedrooms,elegant living and dining areas, a fully equipped 
+                modern kitchen, a private swimming pool, and expansive terraces overlooking the sea. Every detail has been thoughtfully 
+                designed to provide both sophistication and warmth.
+            </p>
+            <p>
+                What truly defines Majestic Villa is our dedication to 
+                personalized service. Guests can enjoy daily housekeeping, dedicated butlers, private chef services upon 
+                request, in-villa spa treatments, airport transfers, and tailored experiences designed to create unforgettable
+                memories. Our team is committed to ensuring every stay is seamless and memorable.We are committed to providing a 
+                five-star luxury villa experience from arrival to departure.
+            </p>
+            <p>Whether you are planning a romantic getaway, 
+                family holiday, special celebration, or simply seeking a peaceful retreat, Majestic Villa offers a private paradise 
+                where lasting memories are made.
+            </p>
+        </section>
+            
+        <section class="container">
+            <h1 class="text-center my-5">The Majestic Experience</h1>
+            <div class="gallery">
+
+                <div class="gallery-item img1"><img src="images/bedroom.png"></div>
+                <div class="gallery-item img2"><img src="images/bathroom.png"></div>
+
+                <div class="gallery-item img3"><img src="images/dining.jpg"></div>
+                <div class="gallery-item img4"><img src="images/living-area.jpg"></div>
+                <div class="gallery-item img5"><img src="images/game-area.jpg"></div>
+                <div class="gallery-item img6"><img src="images/bedroom2.jpg"></div>
+
+                <div class="gallery-item img7"><img src="images/kitchen.jpg"></div>
+                <div class="gallery-item img8"><img src="images/jacuzzi.jpg"></div>
+                <div class="gallery-item img9"><img src="images/spa.jpg"></div>
+
+            </div>
+        </section>
+
+
+        <section class="team-section container">
+            <h1 class="text-center my-5">Meet The Team</h1>
+                
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card team-card h-100 text-center">
+                        <img src="images/butler.png" class="card-img-top" alt="Team Member">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">John Doe</h5>
+                            <p class="text-muted">Butler</p>
+                            <p>Trained at the Guild of Professional English Butlers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card team-card h-100 text-center">
+                        <img src="images/housekeeper.png" class="card-img-top" alt="Team Member">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Sarah Smith</h5>
+                            <p class="text-muted">House Keeper</p>
+                            <p>Five years of experience in private household management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card team-card h-100 text-center">
+                        <img src="images/chef.png" class="card-img-top" alt="Team Member">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Michael Lee</h5>
+                            <p class="text-muted">Private Chef</p>
+                            <p>Trained chef with over a decade of experience in fine dining and private residences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card team-card h-100 text-center">
+                        <img src="images/therapist.png" class="card-img-top" alt="Team Member">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Emily Johnson</h5>
+                            <p class="text-muted">Massage Therapist</p>
+                            <p>Licensed massage therapist with 8+ years of experience. </p>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </section>
+
+
+        <section class="testimonial-section py-5 ">
+            <div class="container">
+                <div class="text-center mb-5 text-white">
+                    <h2 class="fw-bold">What Our Guest Say</h2>
+                    <p class="opacity-75">Real feedback from our happy customers</p>
+                </div>
+
+                <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card testimonial-card p-4 text-center h-100">
+                        <p class="testimonial-text">
+                            “Our stay at the Majestic Villa was nothing short of perfection. 
+                            From the moment we walked through the grand entrance, we were blown away by the attention to detail and the sheer beauty of the property. ”
+                        </p>
+                        <div class="stars mb-3">★★★★★</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://img.freepik.com/free-photo/close-up-cute-pretty-young-touched-asian-girl-press-hands-heart-smiling-happy-grateful-express-gratitude-pleasure-receiving-charming-gift-standing-delighted-white-background_176420-36751.jpg?semt=ais_wordcount_boost&w=740&q=80" 
+                                class="testimonial-img me-2" alt="">
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">Sarah Johnson</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card testimonial-card p-4 text-center h-100">
+                        <p class="testimonial-text">
+                            "The Majestic Villa offered an unforgettable escape from reality. 
+                            Every morning we woke up to breathtaking ocean views, and the luxurious amenities made us never want to leave this paradise."
+                        </p>
+                        <div class="stars mb-3">★★★★★</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_user_personalization&w=740&q=80" 
+                                class="testimonial-img me-2" alt="">
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">Michael Brown</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card testimonial-card p-4 text-center h-100">
+                        <p class="testimonial-text">
+                            "Booking this villa was the highlight of our entire trip. 
+                            The outdoor living spaces were absolutely incredible, and the service provided by the staff made us feel like cherished family members."
+                        <div class="stars mb-3">★★★★★</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://cdn.pixabay.com/photo/2023/11/10/02/30/woman-8378634_1280.jpg" 
+                                class="testimonial-img me-2" alt="">
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">Emily Davis</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card testimonial-card p-4 text-center h-100">
+                        <p class="testimonial-text">
+                            "What a remarkable experience at the Majestic Villa. 
+                            The infinity pool seemed to stretch into the ocean, and the sunsets from that vantage point will be forever etched in our memories."
+                        </p>
+                        <div class="stars mb-3">★★★★★</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://img.freepik.com/premium-photo/close-up-young-handsome-bearded-shirtless-man-standing-isolated-white_171337-71977.jpg" 
+                                class="testimonial-img me-2" alt="">
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">David Wilson</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </section>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+
+</html>

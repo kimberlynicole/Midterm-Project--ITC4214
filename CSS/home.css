@@ -1,0 +1,30 @@
+.welcome-section{
+    margin-top: 50px;
+    padding-top: 50px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.features{
+     margin-top: 30px;
+     padding-top: 30px;
+     padding-bottom: 50px;
+    
+}
+   
+
+.amenities img {
+    max-width: 60px;
+    margin-bottom: 15px;
+}
+
+.item{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+
+}
+
+
+
+

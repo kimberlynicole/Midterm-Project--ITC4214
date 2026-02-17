@@ -1,0 +1,62 @@
+<nav class="nav-bar navbar navbar-expand-lg sticky-top navbar-light "
+        role="navigation"
+        aria-label="Main Navigation">
+
+        <div class="container">
+
+            <!-- Logo + title -->
+            <div class="d-flex align-items-center">
+                <img src="images/logo.png" alt="Majestic Villa Logo" width="60" height="60"> 
+                <h4 class="ms-3">Majestic Villa</h4>
+            </div>
+
+            <!-- Hamburger button -->
+            <button class=" navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="nav-links collapse navbar-collapse justify-content-end" id="menu">
+                <ul class="navbar-nav align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="trip-planner.html">Trip Planner</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <!-- Book button -->
+                    <li class="nav-item">
+                        <a class="book-btn" href="book.html" role="button">Book Now</a>
+                    </li>
+
+                    <!-- Dark mode toggle -->
+                    <li class="nav-item">
+                    <button class="dark-toggle"
+                            onclick="toggleDarkMode()"
+                            aria-label="Toggle dark mode">
+                    </button>
+                </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
