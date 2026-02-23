@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Majestic Villa</title>
+        <link href="CSS/contact.css" rel="stylesheet">
+        <link href="CSS/banner.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+        <script src="javascript/darkmode.js" defer></script>
+        <script src="javascript/loadNavbar.js" defer></script>
+        <script src="javascript/contact.js" defer></script>
+        <script src="javascript/footer.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ================= NAVIGATION ================= -->
+        <div id="navbar" role="navigation" aria-label="Main Navigation"></div>
+        
+         <!-- ================= HERO / BANNER ================= -->
+        <div>
+            <div class="banner img-fluid" role="banner" aria-label="Conatct page hero section">
+                <img src="images/beach.png" alt="Private beach of majestic villa">
+                <div class="overlay"></div> <!-- semi-transparent layer -->
+                <div class="banner-text">
+                    <h1 class="mb-4">Get in Touch With Us</h1> 
+                    
+            </div>
+        </div>
+
+       
+        <!-- ================= MAIN CONTENT ================= -->
+        <div class="container contact-wrapper" role="main " aria-label="Contact form and Google map ">
+            <div class="contact-card">
+                <div class="row g-4">
+
+                    <!-- Left side: Contact form and Social media links -->
+                    <div class="col-md-6">
+                        <h3 class="contact-title">Contact Us</h3>
+                        <p class="contact-text">
+                            Feel free to reach out for any inquiries or feedback. We are here to help!
+                        </p>
+
+                        <form id="contactForm">
+                            <!-- Name -->
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" maxlength="50">
+                            <div class="invalid-feedback">Please enter your name.</div>
+
+                            <!-- Email -->
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" maxlength="50" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+
+                            <!-- Subject -->
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" maxlength="50"required>
+                            <div class="invalid-feedback">Please enter a subject.</div>
+
+                            <!-- Message -->
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                            <div class="invalid-feedback">Please enter your message.</div>
+
+                            <button type="submit" class="send-button">Send Message</button>
+                           
+
+                        </form>
+
+                        <!-- ================= SOCIAL MEDIA LINKS ================= -->
+                        <div class="social-icons text-center">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                        </div>
+
+                    </div>
+
+                    <!-- Right side:  Google Map -->
+                    <div class="col-md-6">
+                        <iframe class="map-frame"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5374670643037!2d25.33727757606542!3d37.42440607207587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a2bfc466a64f95%3A0x28772c8cb56304e6!2sMajestic%20Villa%20by%20d&#39;angelo!5e0!3m2!1sen!2sgr!4v1771514859972!5m2!1sen!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" >
+            <div class="modal-dialog">
+                <div class="modal-content rounded-3">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Message Sent Successfully</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                        <div class="modal-body" id="modalBody"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>

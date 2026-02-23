@@ -1,0 +1,22 @@
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+footer img{
+    max-height: 140px;
+}
+
+.social{
+    margin-bottom: 60px;
+    font-size: 25px;
+}
+

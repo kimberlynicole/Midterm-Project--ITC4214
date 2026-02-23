@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Majestic Villa</title>
+        <link href="CSS/navbar.css" rel="stylesheet">
+        <link href="CSS/book.css" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="javascript/darkmode.js" defer></script>
+        <script src="javascript/loadNavbar.js" defer></script>
+        <script src="javascript/book.js" defer></script>
+    </head>
+
+    <body>
+        <div id="navbar" role="navigation" aria-label="Main Navigation"></div>
+
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <h1>Book Your Stay at Majestic Villa</h1>
+                <p class="lead">Luxury • Comfort • Elegance</p>
+            </div>
+        </section>
+
+        <!-- BOOKING -->
+        <section class="container py-5">
+            <div class="row g-4">
+
+                <!-- FORM COLUMN -->
+                <div class="col-lg-8 card p-4 mb-4">
+                    <h3 class="mb-4">Booking Details</h3>
+                    <form id="bookingForm">
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text"
+                                    maxlength="50"
+                                    class="form-control"
+                                    id="fullName"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email"
+                                    maxlength="50"
+                                    class="form-control"
+                                    id="email"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Check-in</label>
+                                <input type="date"
+                                    id="checkin"
+                                    class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Check-out</label>
+                                <input type="date"
+                                    id="checkout"
+                                    class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Guests (Max 10)</label>
+                                <input type="number"
+                                    min="1"
+                                    max="10"
+                                    value="1"
+                                    class="form-control"
+                                    id="guests"
+                                    required>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100" type="submit">
+                                    Confirm Booking
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <div id="errorMessage"
+                        class="alert alert-danger mt-3 d-none">
+                    </div>
+
+                    <div id="successMessage"
+                        class="alert alert-success mt-3 d-none">
+                        Booking submitted successfully!
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY COLUMN -->
+                <div class="col-lg-4">
+                    <div class="price-box">
+                        <h4>$350 / Night</h4>
+                        <p>Total Nights: <span id="totalNights">0</span></p>
+                        <hr>
+                        <h5>Total: $<span id="totalPrice">0</span></h5>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!--  FAQ ACCORDION -->
+        <section class="py-5 bg-light">
+            <div class="container">
+
+                <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What is the cancellation policy?
+                            </button>
+                        </h2>
+
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Free cancellation up to 7 days before check-in.
+                            </div>
+                        </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Is there a private chef or cook service?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer an in-villa dining experience. You can hire our private chef to prepare delicious local and international cuisine. You simply pay for the groceries plus a small service fee. Please book this at least 3 hours in advance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can you arrange airport transportation?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we can arrange private airport transfers for you. Please provide us with your flight details at least 3 days in advance to book this service. A fee will apply and will be quoted based on the vehicle size needed.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is the villa private?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely. When you book My Majestic Villa, you rent the entire property. You will not share the living spaces, pool, or garden with any other parties.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            What is the smoking policy within the villa?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, My Majestic Villa is a 100% non-smoking property. This policy applies to the entire interior of the villa. Smoking is permitted only in designated outdoor areas. A cleaning fee will be charged for smoking inside the villa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+
+</html>
+
+    

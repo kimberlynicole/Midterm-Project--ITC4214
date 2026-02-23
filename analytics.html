@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trip Analytics</title>
+
+        <link href="CSS/analytics.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="javascript/analytics.js" defer></script>
+    </head>
+
+    <body>
+
+        <h2 class="mt-4 text-center">Trip Task Analytics</h2>
+
+        <div class="box shadow">
+
+            <!-- BAR CHART -->
+            <div class="bar-container">
+                <div class="bar completed-bar"></div>
+                <div class="bar pending-bar"></div>
+            </div>
+
+            <div class="legend">
+                <span class="color-box" style="background:green;"></span> Completed
+                &nbsp;&nbsp;
+                <span class="color-box" style="background:red;"></span> Pending
+            </div>
+
+            <div class="mt-4">
+                <p>Completed: <span class="completed"></span></p>
+                <p>Pending: <span class="pending"></span></p>
+                <p>Total: <span class="total"></span></p>
+            </div>
+
+        </div>
+
+            <a href="index.html" class="btn btn-secondary mt-4">
+                Back to Trip Planner </a>
+       
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,69 @@
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    overflow: hidden;
+    }
+
+.banner-text h1{
+    font-size: 50px;
+
+}
+
+.banner-text p{
+    font-size: 20px;
+    
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+
+/* Overlay covering only the image */
+.banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+    z-index: 1; /* sits above image but below text */
+    }
+
+/* Text on top */
+.banner-text {
+    position: absolute;
+    z-index: 2; /* above overlay */
+    color: white;
+    font-size: 100%; 
+    font-weight: bold;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 90%;
+    }
+
+
+
+@media (max-width: 800px) {
+    .banner-text h1 {
+        font-size: 35px;
+    }
+    .banner-text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-text h1 {
+        font-size: 20px;
+    }
+    .banner-text p {
+        font-size: 10px;
+    }
+}
