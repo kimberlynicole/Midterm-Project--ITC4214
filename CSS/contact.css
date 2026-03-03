@@ -11,18 +11,6 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* Title */
-.contact-title {
-    color: black;
-    font-weight: 600;
-}
-
-.contact-text {
-    color: #6c757d;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-
 /*Form Fields*/
 .form-control {
     border-radius: 8px;
@@ -36,24 +24,25 @@
     color: white;
     border: none;
     padding: 10px 16px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .send-button:hover {
-    background-color: #7D8B99; 
+    background-color: #555f6a; 
 }
 
 /* Social Icons */
 .social-icons {
     margin-top: 25px;
+    margin-bottom: 30px;
 }
 
 .social-icons a {
     font-size: 25px;
     margin-right: 30px;
     margin-bottom: 50px;
-    color: #fab938  ;
+    color: #748599;  ;
 }
 
 
@@ -64,4 +53,8 @@
     height: 100%;
     min-height: 450px;
     border: none;
+}
+/*Frequently ask question*/
+.dark-mode h3{
+    color: black;
 }

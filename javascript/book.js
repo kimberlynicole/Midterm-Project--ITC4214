@@ -1,3 +1,4 @@
+// Select  DOM elements from the page 
 const checkin = document.querySelector('#checkin');
 const checkout = document.querySelector('#checkout');
 const totalNights = document.querySelector('#totalNights');
@@ -8,108 +9,125 @@ const successMessage = document.querySelector('#successMessage');
 const guests = document.querySelector('#guests');
 const fullName = document.querySelector('#fullName');
 
-const pricePerNight = 350;
+const PRICE_PER_NIGHT = 350;
 
-//  Disable past dates
+// Set minimum dates 
 const today = new Date().toISOString().split('T')[0];
 checkin.min = today;
 checkout.min = today;
 
-//  When check-in changes
-checkin.addEventListener('change', () => {
 
+// Check-in change
+checkin.addEventListener('change', handleCheckinChange);
+function handleCheckinChange() {
     checkout.min = checkin.value;
-
+    // Reset checkout if it is before or equal to the new check-in
     if (checkout.value && checkout.value <= checkin.value) {
         checkout.value = "";
     }
+    updatePrice();      // Recalculate price whenever check-in changes
+}
 
-    calculatePrice();
-});
+// Checkout change
+checkout.addEventListener('change',  updatePrice);
 
-//  When checkout changes
-checkout.addEventListener('change', calculatePrice);
-
-//  Limit guests to maximum 10
-guests.addEventListener('input', () => {
-
-    errorMessage.classList.add('d-none');
-
-    if (guests.value > 10) {
-        errorMessage.textContent = "Maximum guest limit is 10 only.";
-        errorMessage.classList.remove('d-none');
-    }
-
-    if (guests.value < 1) {
-        errorMessage.textContent = "Minimum guest is 1.";
-        errorMessage.classList.remove('d-none');
-    }
-});
-
-fullName.addEventListener('input', () => {
-
-    const namePattern = /^[a-zA-Z\s]+$/;
-
-    if (!namePattern.test(fullName.value)) {
-        errorMessage.textContent = "Full name should not contain numbers or special characters.";
-        errorMessage.classList.remove('d-none');
-    } else {
-        errorMessage.classList.add('d-none');
-    }
-
-});
-
-function calculatePrice(){
-
-    if(!checkin.value || !checkout.value) return;
+function updatePrice() {
+    if (!checkin.value || !checkout.value) return;
 
     const checkinDate = new Date(checkin.value);
     const checkoutDate = new Date(checkout.value);
 
-    if(checkoutDate <= checkinDate){
+    // If checkout is before or equal to check-in, reset values
+    if (checkoutDate <= checkinDate) {
         totalNights.textContent = 0;
         totalPrice.textContent = 0;
         return;
     }
 
-    const diff = checkoutDate - checkinDate;
-    const nights = diff / (1000 * 60 * 60 * 24);
+    // Calculate the number of nights
+    const diffTime = checkoutDate - checkinDate;
+    const nights = diffTime / (1000 * 60 * 60 * 24);
 
-    totalNights.textContent = nights;
-    totalPrice.textContent = nights * pricePerNight;
+    totalNights.textContent = nights;                        // Display number of nights
+    totalPrice.textContent = nights * PRICE_PER_NIGHT;      // Display total price
 }
 
-//  Final Form Validation
-form.addEventListener('submit', function(e){
+// Guests input
+guests.addEventListener('input', handleGuestsInput);
+function handleGuestsInput() {
+    hideMessages();
+    if (guests.value > 10) {
+        showError("Maximum guest limit is 10 only.");
+    } else if (guests.value < 1) {
+        showError("Minimum guest is 1.");
+    }
+}
 
-    e.preventDefault();
-    errorMessage.classList.add('d-none');
-    successMessage.classList.add('d-none');
-    
+// Full name input
+fullName.addEventListener('input', validateFullNameInput);
+function validateFullNameInput() {
+    const name = fullName.value;
+    let isValid = true;
+    for (let i = 0; i < name.length; i++) {
+        const char = name[i];
+        if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char === ' ')) {
+            isValid = false;
+            break;
+        }
+    }
+    if (!isValid) {
+        showError("Full name should not contain numbers or special characters.");
+    } else {
+        errorMessage.classList.add('d-none');
+    }
+}
 
-    const checkinDate = new Date(checkin.value);
-    const checkoutDate = new Date(checkout.value);
-    const namePattern = /^[a-zA-Z\s]+$/;
+// Form submission
+form.addEventListener('submit', handleFormSubmit);
+function handleFormSubmit(event) {
+    event.preventDefault();
+    hideMessages();
 
-    if(!checkin.value || !checkout.value || checkoutDate <= checkinDate){
-        errorMessage.textContent = "Checkout must be after check-in.";
-        errorMessage.classList.remove('d-none');
+    // Validate dates
+    if (!checkin.value || !checkout.value || new Date(checkout.value) <= new Date(checkin.value)) {
+        showError("Checkout must be after check-in.");
         return;
     }
 
+    // Validate guests
     if (guests.value < 1 || guests.value > 10) {
-        errorMessage.textContent = "Guests must be between 1 and 10 only.";
-        errorMessage.classList.remove('d-none');
+        showError("Guests must be between 1 and 10 only.");
         return;
     }
 
-    if (!namePattern.test(fullName.value)) {
-        errorMessage.textContent = "Full name should not contain numbers or special characters.";
-        errorMessage.classList.remove('d-none');
+    // Validate full name
+    const name = fullName.value;
+    let isValidName = true;
+    for (let i = 0; i < name.length; i++) {
+        const char = name[i];
+        if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char === ' ')) {
+            isValidName = false;
+            break;
+        }
+    }
+    if (!isValidName) {
+        showError("Full name should not contain numbers or special characters.");
         return;
     }
+
+    // Success
     successMessage.classList.remove('d-none');
     form.reset();
     totalNights.textContent = 0;
     totalPrice.textContent = 0;
-});
+}
+
+function showError(message) {
+    errorMessage.textContent = message;             // hides the error message
+    errorMessage.classList.remove('d-none');        // shows the error message
+}
+
+function hideMessages() {
+    errorMessage.classList.add('d-none');
+    successMessage.classList.add('d-none');
+}

@@ -6,19 +6,79 @@
         <title> Majestic Villa</title>
         <link href="CSS/contact.css" rel="stylesheet">
         <link href="CSS/banner.css" rel="stylesheet">
+        <link href="CSS/navbar.css" rel="stylesheet">
+        <link href="CSS/banner.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
         <script src="javascript/darkmode.js" defer></script>
-        <script src="javascript/loadNavbar.js" defer></script>
         <script src="javascript/contact.js" defer></script>
         <script src="javascript/footer.js" defer></script>
     </head>
 
     <body>
 
-        <!-- ================= NAVIGATION ================= -->
-        <div id="navbar" role="navigation" aria-label="Main Navigation"></div>
-        
+        <!--------------------------------------------- NAVIGATION BAR---------------------------------------------------->
+        <nav class="nav-bar navbar navbar-expand-lg sticky-top navbar-light "
+            role="navigation"
+            aria-label="Main Navigation">
+
+            <div class="container">
+
+                <!-- Logo + title -->
+                <div class="d-flex align-items-center">
+                    <img src="images/logo.png" alt="Majestic Villa Logo" width="60" height="60"> 
+                    <h4 class="ms-3">Majestic Villa</h4>
+                </div>
+
+                <!-- Hamburger button -->
+                <button class=" navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav Links -->
+                <div class="nav-links collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="navbar-nav align-items-lg-center">
+                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="trip-planner.html">Trip Planner</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+
+                        <!-- Book button -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.html">Book Now</a>
+                        </li>
+
+                        <!-- Dark mode toggle -->
+                        <li class="nav-item">
+                            <button class="dark-toggle"
+                                onclick="toggleDarkMode()"
+                                aria-label="Toggle dark mode">
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
          <!-- ================= HERO / BANNER ================= -->
         <div>
             <div class="banner img-fluid" role="banner" aria-label="Conatct page hero section">
@@ -99,6 +159,91 @@
                 </div>
             </div>
         </div>
+
+
+        <!--  FAQ Accordian (New Component) -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What is the cancellation policy?
+                            </button>
+                        </h2>
+
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>We’re happy to offer a full refund for cancellations made at least 31 days before your stay.</li>
+                                </ul>
+
+                                <ul>
+                                    <li>For cancellations made 15 to 30 days in advance, we offer a 50% refund.</li>
+                                </ul>
+
+                                <ul>
+                                    <li>Unfortunately, we are unable to offer refunds for cancellations made within 14 days of arrival.</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Is there a private chef or cook service?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer an in-villa dining experience. You can hire our private chef to prepare delicious local and international cuisine. You simply pay for the groceries plus a small service fee. Please book this at least 3 hours in advance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can you arrange airport transportation?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we can arrange private airport transfers for you. Please provide us with your flight details at least 3 days in advance to book this service. A fee will apply and will be quoted based on the vehicle size needed.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is the villa private?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely. When you book My Majestic Villa, you rent the entire property. You will not share the living spaces, pool, or garden with any other parties.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            What is the smoking policy within the villa?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, My Majestic Villa is a 100% non-smoking property. This policy applies to the entire interior of the villa. Smoking is permitted only in designated outdoor areas. A cleaning fee will be charged for smoking inside the villa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div id="footer-placeholder"></div>
 

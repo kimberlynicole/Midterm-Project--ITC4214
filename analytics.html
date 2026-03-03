@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Trip Analytics</title>
 
@@ -10,16 +10,20 @@
 
     <body>
 
-        <h2 class="mt-4 text-center">Trip Task Analytics</h2>
+        <!-- Main Page Heading -->
+        <h2 class="my-4 text-center">Trip Task Analytics</h2>
 
-        <div class="box shadow">
-
-            <!-- BAR CHART -->
-            <div class="bar-container">
-                <div class="bar completed-bar"></div>
-                <div class="bar pending-bar"></div>
+       <div class="box shadow-lg" role="region" aria-labelledby="analytics-heading">
+            <!-- Bar Chart -->
+            <div class="bar-container" role="img" aria-label="Bar chart showing completed and pending trip tasks" >
+                <!-- Completed Tasks Bar -->
+                <div class="bar completed-bar" role="progressbar" aria-label="Completed tasks"></div>
+               
+                <!-- Pending Tasks Bar -->
+                <div class="bar pending-bar" role="progressbar" aria-label="Pending tasks"></div>
             </div>
 
+             
             <div class="legend">
                 <span class="color-box" style="background:green;"></span> Completed
                 &nbsp;&nbsp;
@@ -34,7 +38,7 @@
 
         </div>
 
-            <a href="index.html" class="btn btn-secondary mt-4">
+            <a href="trip-planner.html" class="btn mt-4" id="back-button">
                 Back to Trip Planner </a>
        
 

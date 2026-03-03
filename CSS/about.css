@@ -3,12 +3,14 @@
             Gallery Section
 ======================================*/
 
+/* Main gallery grid layout */
 .gallery{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px 250px 300px 300px;
+    grid-template-columns: repeat(4, 1fr);          /* 4 equal-width columns */
+    grid-template-rows: 300px 250px 300px 300px;    /* Custom row heights */
     gap:28px;
 
+    /* Define custom layout using grid areas */
     grid-template-areas:
         "img1 img1 img2 img2"
         "img3 img4 img5 img5"
@@ -17,8 +19,7 @@
        
 }
 
-/* Assign areas */
-
+/* Assign each image to its grid area */
 .img1  { grid-area: img1; }
 .img2  { grid-area: img2; }
 .img3  { grid-area: img3; }
@@ -29,31 +30,33 @@
 .img8  { grid-area: img8; }
 .img9  { grid-area: img9; }
 
-/* Image Styling */
 
+/* Gallery item container styling */
 .gallery-item{
-    overflow:hidden;
+    overflow:hidden;        /* Prevent image overflow on hover */
     border-radius:12px;
 }
 
+/* Image styling inside gallery */
 .gallery-item img{
     width:100%;
     height:100%;
-    object-fit:cover;
-    transition:.5s ease;
+    object-fit:cover;       /* Ensures image fills container without distortion */
+    transition:.5s ease;    /* Smooth hover animation */
 }
 
+/* Slight zoom effect on hover */
 .gallery-item img:hover{
     transform:scale(1.05);
 }
 
 
 /* ===============================
-   TABLET
+   TABLET RESPONSIVENESS
 ================================ */
 
 @media (max-width: 1000px){
-
+/* Adjust grid to 2 columns for tablets */
     .gallery{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -65,18 +68,18 @@
             "img9 img9";
     
     }
-
+    /* Set consistent height for items */
     .gallery-item{
         height:300px;
     }
 }
 
 /* ===============================
-   MOBILE
+    MOBILE RESPONSIVENESS
 ================================ */
 
 @media (max-width: 576px){
-
+    /* Stack all images vertically */
     .gallery{
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -98,31 +101,35 @@
 
 
 /*====================================
-            Team Section
+            TEAM SECTION
 ======================================*/
 
 .team-section {
-    padding: 60px 0;
+    padding: 60px 0;    /* Vertical spacing */
 }
+.team-card p {
+    text-align: center;
+}
+/* Team member image styling */
 .team-card img {
     height: 250px;
     object-fit: cover;
 }
+/* Card animation setup  to have smooth animation */
 .team-card {
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+transition: transform 0.3s ease;
 }
 
-.team-card p {
-    text-align: center;
-}
+/* Hover effect for team cards */
 .team-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-10px);                   /* Lift card upward */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);     /* Add soft shadow */
 }
 
+/* Responsive adjustment for smaller screens */
 @media (max-width: 700px){
 .team-card img {
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     }
 }
@@ -148,6 +155,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease;
 }
 
+/* Lift testimonial card on hover */
 .testimonial-card:hover {
     transform: translateY(-6px);
 }
@@ -165,10 +173,10 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 18px;
 }
 
-/* Small circular image */
+/* Circular testimonial image */
 .testimonial-img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 50%;     /* Make image circular */
     object-fit: cover;
 }

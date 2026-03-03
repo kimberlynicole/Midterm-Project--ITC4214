@@ -1,36 +1,44 @@
-body{
-    font-family: 'Segoe UI', sans-serif;
-    background:#f8f9fa;
-}
-
-.hero{
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1505691938895-1758d7feb511');
-    background-size:cover;
-    background-position:center;
-    color:white;
-    padding:100px 0;
-    text-align:center;
-}
-
 .card{
     border:none;
     border-radius:15px;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
-
-.price-box{
-    background:#212529;
-    color:white;
-    border-radius:15px;
-    padding:25px;
+#button-book{
+    background-color: #7D8B99;
+    color: white;
 }
 
-.btn-primary{
-    background:#6c63ff;
-    border:none;
+#button-book:hover{
+    background-color: #555f6a;
+    
+
+    
 }
 
-.btn-primary:hover{
-    background:#5848d6;
+/* Responsive adjustment for smaller screens for banner image */
+@media (max-width: 700px){
+.team-card img {
+    height: 400px;
+    object-fit: cover;
+    }
 }
+
+/* card style for both boxes price box and weather*/
+.price-box,
+.weather-box {
+    background: #56606a;
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* Dark mode support */
+.dark-mode .price-box,
+.dark-mode .weather-box {
+    background-color: white;
+    color: black;
+}
+
+
+
